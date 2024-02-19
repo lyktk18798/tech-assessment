@@ -47,7 +47,7 @@ export function ShortenUrl() {
     setLoading(true);
     await shortenURL(longUrl)
       .then(data => {
-        setShortUrl(`${process.env.REACT_APP_API_ENDPOINT}/${data}`);
+        setShortUrl(data);
         openNotification(true);
       }).catch((err) => {
           setShortUrl(err.message);
